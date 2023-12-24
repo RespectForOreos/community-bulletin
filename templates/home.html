@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class = "top">
+    <div id = "title-cont">
+        <div class = "title">Community</div>
+        <div class = "title titleBelow">Bulletin</div>
+    </div>
+    <img id = "randomImg" src = "board.png">
+</div>
+
+<div id = "post-cont">
+{% for event in events %} 
+     <a class= "post" href = "{{ url_for('event', id = event.id) }}">{{ event.name  | title}}</a>
+{% endfor %}
+</div>
+
+{% endblock %}
