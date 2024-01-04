@@ -2,12 +2,12 @@
 {% block content %}
 
 <br>
+<br>
+<br>
 <h3>{{ event.name | title}}</h3>
 <p>{{ event.description }} </p>
-    <p>{{ event.date }} </p>
-  <p>  {{ event.time }}
-</p>
-
-<a href = "{{ url_for('home') }}"> Dashboard </a>
+<p>{{ event.date }} </p>
+<p>{{ event.time }}</p>
+<p> Posted by <a href = "{{ url_for('user', id = event.user.id) }}" >{{ event.user.username }}</a></p>
 
 {% endblock %}

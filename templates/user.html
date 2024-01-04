@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<title>{{ user.username }}'s Profile</title>
+
+<br>
+<br>
+<br>
+
+<h1>{{ user.username }}</h1>
+
+{% for event in user.events %}
+    <a class= "post" href = "{{ url_for('event', id = event.id) }}">{{ event.name  | title}}</a>
+{% endfor %}
+
+{% if not user.events %} 
+    <p>{{ user.username }} has no events posted.</p>
+{% endif %}
+
+{% endblock %}

@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-    <title>Home</title>
 
 </head>
 <body>
 <header>
-        <ul>
-            <a class = "header-text" href="{{ url_for('add_event') }}">Add Event</a>
-            <a class = "header-text" href="{{ url_for('about') }}">About</a>
-        </ul>
-    </header>
+    <ul>
 
+        <a class = "header-text" href = "{{ url_for('home') }}">Home</a>
+        <a class = "header-text" href="{{ url_for('add_event') }}">Add Event</a>
+        <a class = "header-text" href = "{{ url_for('users') }}">Users</a>
+        
+        {% if current_user.is_authenticated %}
+            <a class = "header-text" href = "{{ url_for('profile') }}">Profile</a>
+        {% endif %}
+
+        {% if not current_user.is_authenticated %}
+            <a class = "header-text" href = "{{ url_for('login') }}">Login</a>
+            <a class = "header-text" href = "{{ url_for('register') }}">Register</a>
+        {% endif %}
+
+    </ul>
+</header>
+    
 	{% block content %} {% endblock %}
+
 
 </body>
 

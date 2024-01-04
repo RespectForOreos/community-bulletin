@@ -14,9 +14,8 @@
 body{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: 0px;
-    height: 110vh;
+    height: 140vh;
     
 }
 
@@ -30,7 +29,6 @@ header{
     padding: 20px;
     margin: 0px;
     position: fixed;
-
 
 }
 
@@ -82,7 +80,7 @@ a.header-text:hover{
 
 #post-cont{
     max-width: 100vw;
-    height: 35vh;
+    height: 100vh;
     display: flex;
     overflow: scroll;
     
@@ -132,10 +130,6 @@ a.header-text:hover{
   
   }
 
-  form{
-    display: flex;
-    flex-direction: column;
-    
-  }
+  
 
 
